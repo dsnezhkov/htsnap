@@ -1,0 +1,13 @@
+{
+  "name": "htsnap",
+  "version": "0.0.1",
+  "description": "Simple screenshot of HTTP(S) endpoints",
+  "repository": "git.ibm.com/dsnezhkov/htsnap",
+  "license": "Beerware",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.12",
+    "url": "^0.11.0",
+    "url-to-screenshot": "^0.6.2",
+    "webpage": "^0.3.0"
+  }
+}
