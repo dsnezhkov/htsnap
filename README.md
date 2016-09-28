@@ -23,7 +23,7 @@ It is based on PhantomJS's WebKit engine to have fuill support of rendering and 
 ---
 ## Installation
 
-`git clone repository
+	$ git clone repository
 	$ ./install
 
 This will pull dependencies from package.json, and create links to local installation of PhantomJS driver.
