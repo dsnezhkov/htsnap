@@ -1,6 +1,13 @@
+/*
+
+
+
+	Take Web snapshots of visited URLs
+
+*/
 var fs=require('fs');
 var urll=require('url');
-var system = require('system')
+var system = require('system');
 
 var SCREENSHOT_WIDTH = 1280; 
 var SCREENSHOT_HEIGHT = 900; 
@@ -10,6 +17,7 @@ var USERAGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, 
 var URL_FILE;
 var IMG_DESTD;
 var URLS=[];
+var index = 0; 
 
 var  setFromFile = function(urls, file){
 	var stream = fs.open('urls', 'r');
@@ -22,11 +30,11 @@ var  setFromFile = function(urls, file){
 
 var renderPage = function(page,element){
 
-    console.log(" Render for : ",  element)
+    console.log(" Render for : ",  element);
 	 //screenshotFile = fs.workingDirectory + '/images/' + urll.parse(element).host +  urll.parse(element).port + '.png';
 	 screenshotFile = IMG_DESTD + '/' + urll.parse(element).host +  urll.parse(element).port + '.png';
 	 page.render(screenshotFile);
-    console.log("+ Rendered for : ",  screenshotFile)
+    console.log("+ Rendered for : ",  screenshotFile);
 }
 
 var exitIfLast = function(index,array){
@@ -40,7 +48,7 @@ var exitIfLast = function(index,array){
 
 var takeScreenshot = function(element){
 
-    console.log("- Opening URL:", element)
+    console.log("- Opening URL:", element);
 
     var page = require("webpage").create();
 
@@ -50,15 +58,13 @@ var takeScreenshot = function(element){
 	 page.open(element);
 	 page.onLoadFinished = function() {
 		  setTimeout(function(){
-				console.log("- Rendering endpoint to storage for " + element)
-				renderPage(page,element)
-				exitIfLast(index,URLS)
+				console.log("- Rendering endpoint to storage for " + element);
+				renderPage(page,element);
+				exitIfLast(index,URLS);
 				index++; 
 				takeScreenshot(URLS[index]);
 		  },LOAD_WAIT_TIME)
 	  }
-
-
 }
 
 var usage = function(err){
@@ -72,16 +78,14 @@ var usage = function(err){
 
 
 // Snap
-var index = 0; 
-
 
 console.log("Starting...");
 if (system.args.length != 3 ) {
 		usage("Need File with URLs and Destination for image output");
-} else 
+} else {
 	if (fs.exists(system.args[1]) && fs.exists(system.args[2])) {
 		URL_FILE=system.args[1];
-		IMG_DESTD=system.args.[2];
+		IMG_DESTD=system.args[2];
 
 		setFromFile(URLS,URL_FILE);
 		takeScreenshot(URLS[index]);

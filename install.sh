@@ -13,4 +13,4 @@ ln -s ${PWD}/node_modules/phantomjs-prebuilt/bin/phantomjs ${PWD}/bin/phantomjs
 PHANTOMJS="${PWD}/bin/phantomjs"
 
 echo "+++++++++++++ Greetings PhantomJS ++++++++++++++"
-$PHANTOMJS
+$PHANTOMJS -v
