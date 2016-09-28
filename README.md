@@ -14,12 +14,13 @@ It is based on PhantomJS's WebKit engine to have full support of rendering and J
 ---
 ## Usage
 
-`Usage: ./bin/phantomjs htsnap.js <URL_filename> <output_directory>
+```sh
+Usage: ./bin/phantomjs htsnap.js <URL_filename> <output_directory>
 
 	URL_filename format: 1 url per line
 	ex. http://google.com
 	ex. https://google.com:9443    
-
+```
 ---
 ## Installation
 
