@@ -37,18 +37,18 @@ Rendering endpoint to storage for http://yahoo.com
 Render for :  http://yahoo.com
 Rendered for :  ./images//yahoo.comnull.png
 2 more endpoints to go
-~~~~~~~~~~~~~~
+...
 Opening URL: http://google.com
 Rendering endpoint to storage for http://google.com
 Render for :  http://google.com
 Rendered for :  ./images//google.comnull.png
 1 more endpoints to go
-~~~~~~~~~~~~~~
+...
 Opening URL: http://microsoft.com
 Rendering endpoint to storage for http://microsoft.com
 Render for :  http://microsoft.com
 Rendered for :  ./images//microsoft.comnull.png
 0 more endpoints to go
-~~~~~~~~~~~~~~
+...
 ! Exiting phantomjs
 ```
