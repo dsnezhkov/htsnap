@@ -14,7 +14,7 @@ It is based on PhantomJS's WebKit engine to have fuill support of rendering and 
 ---
 ## Usage
 
-``Usage: ./bin/phantomjs htsnap.js <URL_filename> <output_directory>
+`Usage: ./bin/phantomjs htsnap.js <URL_filename> <output_directory>
 
 	URL_filename format: 1 url per line
 	ex. http://google.com
@@ -23,7 +23,7 @@ It is based on PhantomJS's WebKit engine to have fuill support of rendering and 
 ---
 ## Installation
 
-`` git clone repository
+`git clone repository
 	$ ./install
 
 This will pull dependencies from package.json, and create links to local installation of PhantomJS driver.
